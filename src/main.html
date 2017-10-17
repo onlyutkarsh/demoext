@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../libs/VSS.SDK.min.js"></script>
+    <script>
+        VSS.init({
+            explicitNotifyLoaded: true,
+            setupModuleLoader: true,
+            usePlatformScripts: true,
+            usePlatformStyles: true
+        });
+        // Wait for the SDK to be initialized then load a script
+        VSS.require(["src/vendor", "src/save"], function (vendorObj, saveObj) {
+            VSS.notifyLoadSucceeded();
+
+        });
+    </script>
+</head>
+
+<body class="bodybg">
+    <div class="container">
+        <div class="fileUploaderContainer"></div>
+        <div class="loader"></div>
+        <div class="errorDiv" style="overflow: auto" hidden>
+            <ul id="error-list"></ul>
+        </div>
+    </div>
+</body>
+
+</html>
